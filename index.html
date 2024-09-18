@@ -8,9 +8,8 @@
 </head>
 <body>
     <header>
-        <div class="header-top">
             <img src="icon.png" alt="TasMakhal Logo" class="header-icon">
-            <h1>TasMakhal</h1>
+            <h1>AQ-STONE</h1>
             <div class="language-switch">
                 <button class="dropdown-btn" id="current-lang">
                     <img src="flags/ru.jpeg" alt="RU Flag" class="flag-icon"> RU
@@ -30,48 +29,42 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </header>
-    
-    
-
-    <section class="hero">
         
-        <div class="overlay">
-            <!-- Изображение камня -->
-        </div>
-    </section>
-
+    </header>
+    <div class="image-container">
+        <img src="stone.png" alt="Центрированное фото">
+    </div>
+    <div class="features-container">
+        
+        <div class="feature-item hh1">•Добываем</div>
+        <div class="feature-item hh2">•Обрабатываем</div>
+        <div class="feature-item hh3">•Монтируем</div>
+        <div class="feature-item hh4">•Доставляем</div>
+        
+    </div>
+   
     <main>
         <section id="about">
             <h2 class="about-title">О компании</h2>
             <p class="about-text">TasMakhal — ведущий поставщик травертина...</p>
         
-            <h3>Наши видео:</h3>
+            <h3 class="features-title"></h3>
             <div class="video-slider">
                 <div class="video-item">
-                    <video src="travertinvid1.mp4" controls></video>
-                    <p class="video-description">Описание видео 1</p>
+                    <video src="travertinved1.mp4" controls></video>
+                   
                 </div>
                 <div class="video-item">
-                    <video src="travertinvid2.mp4" controls></video>
-                    <p class="video-description">Описание видео 2</p>
+                    <video src="travertinved2.mp4" controls></video>
+                    
                 </div>
                 <div class="video-item">
-                    <video src="travertinvid3.mp4" controls></video>
-                    <p class="video-description">Описание видео 3</p>
+                    <video src="travertinved3.mp4" controls></video>
+                  
                 </div>
                 <div class="video-item">
-                    <video src="travertinvid1.mp4" controls></video>
-                    <p class="video-description">Описание видео 1</p>
-                </div>
-                <div class="video-item">
-                    <video src="travertinvid2.mp4" controls></video>
-                    <p class="video-description">Описание видео 2</p>
-                </div>
-                <div class="video-item">
-                    <video src="travertinvid3.mp4" controls></video>
-                    <p class="video-description">Описание видео 3</p>
+                    <video src="travertinved4.mp4" controls></video>
+                    
                 </div>
             </div>
         </section>
@@ -82,40 +75,71 @@
         
             <div class="carousel">
                 <div class="carousel-slide">
-                    <img src="travertin1.jpg" alt="Travertine Image 1">
-                    <p class="image-description">Описание изображения 1</p>
+                    <img src="travertin8.jpg" alt="Travertine Image 1">
+                  
                 </div>
                 <div class="carousel-slide">
                     <img src="travertin2.jpg" alt="Travertine Image 2">
-                    <p class="image-description">Описание изображения 2</p>
+                    
                 </div>
                 <div class="carousel-slide">
                     <img src="travertin3.jpg" alt="Travertine Image 3">
-                    <p class="image-description">Описание изображения 3</p>
+                    
                 </div>
                 <div class="carousel-slide">
                     <img src="travertin4.jpg" alt="Travertine Image 4">
-                    <p class="image-description">Описание изображения 4</p>
+                    
                 </div>
                 <div class="carousel-slide">
                     <img src="travertin5.jpg" alt="Travertine Image 5">
-                    <p class="image-description">Описание изображения 5</p>
+                    
                 </div>
                 <div class="carousel-slide">
                     <img src="travertin6.jpg" alt="Travertine Image 6">
-                    <p class="image-description">Описание изображения 6</p>
+                    
+                </div>
+                <div class="carousel-slide">
+                    <img src="travertin7.jpg" alt="Travertine Image 6">
+                    
+                </div>
+                <div class="carousel-slide">
+                    <img src="travertin1.jpg" alt="Travertine Image 6">
+                    
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2 class="contact-title">Контакты</h2>
-            <p class="contact-text">Для консультации свяжитесь с нами...</p>
+            <h2 class="contact-title"></h2>
+            <p class="contact-text"></p>
         </section>
     </main>
+<!-- Контейнер для формы связи -->
+<div id="contact-wrapper" class="contact-wrapper">
+    <div id="contact-form" class="contact-form">
+        <div id="contact-text" class="contact-text">Свяжитесь с нами</div>
+        <div id="contact-button" class="contact-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/6490/6490268.png" alt="Message Icon" class="message-icon">
+        </div>
+    </div>
+
+    <!-- Скрытые кружки с иконками -->
+    <div id="contact-icons" class="contact-icons hidden">
+        <a href="https://api.whatsapp.com/send/?phone=7777050898&text&type=phone_number&app_absent=0" class="contact-icon" id="whatsapp" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/3536/3536445.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/travertin_tasmakhal/" class="contact-icon" id="instagram" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
+        <a href="tel:+77777050898" class="contact-icon" id="phone">
+            <img src="https://cdn-icons-png.flaticon.com/512/152/152851.png" alt="Phone">
+        </a>
+    </div>
+</div>
+
 
     <footer>
-        <p>&copy; 2024 TasMakhal. Все права защищены.</p>
+        <p>&copy; 2024 TasMakhal. </p>
     </footer>
 
     <script src="scripts.js"></script>

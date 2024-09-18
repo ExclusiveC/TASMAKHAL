@@ -1,28 +1,21 @@
-/* Основные стили */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #f9f5f0;
+    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
 }
 
 header {
     background-color: #a8957b;
     color: #fff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
     display: flex;
-    flex-direction: column;
-}
-
-.header-top {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    box-sizing: border-box;
 }
 
 .header-icon {
@@ -30,7 +23,6 @@ header {
     height: auto;
 }
 
-/* Стили для выпадающего меню */
 .language-switch {
     position: relative;
     display: flex;
@@ -38,7 +30,7 @@ header {
 }
 
 .dropdown-btn {
-    background-color: #fff;
+    background-color:#a8957b;
     border: none;
     padding: 0.5rem 1rem;
     margin-left: 1rem;
@@ -49,9 +41,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.dropdown-btn:hover {
-    background-color: #ccc;
-}
+
 
 .flag-icon {
     width: 20px;
@@ -64,10 +54,8 @@ header {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
     z-index: 1000;
-    min-width: 150px;
+    
 }
 
 .dropdown-content a {
@@ -80,80 +68,58 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.dropdown-content a:hover {
-    background-color: #f0f0f0;
-}
 
-.dropdown-content .flag-icon {
-    width: 20px;
-    height: auto;
-    margin-right: 0.5rem;
-}
 
-/* Показать содержимое выпадающего меню при наведении */
 .language-switch:hover .dropdown-content {
     display: block;
 }
 
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.hero {
-    background-image: url('stone.png');
-    background-size: contain; /* Изменено на "contain", чтобы изображение занимало меньше пространства */
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 50vh; /* Уменьшено по высоте */
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    color: #fff;
+.image-container {
     text-align: center;
-    margin-top: 10rem; /* Увеличено расстояние между шапкой и изображением */
-    position: relative;
 }
 
-/* Стиль для текста "Травертин" */
-.large-text {
-    font-size: 5rem; /* Увеличен размер текста */
-    font-weight: bold;
-    color: #e0c7a0;
-    text-transform: uppercase;
-    position: absolute;
-    top: 5%; /* Поднято выше */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    opacity: 0.7;
+.image-container img {
+    max-width: 80%;
+    height: auto;
 }
 
-/* Другие стили страниц */
+.text-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items in a row */
+    gap: 20px; /* Spacing between items */
+    padding: 20px;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px; /* Добавляет отступы слева и справа */
+    gap: 30px; /* Расстояние между элементами */
+    margin: 20px 0; /* Отступы сверху и снизу */
+    margin-left: 20px;
+}
+
+.feature-item {
+    font-size: 2em; /* Размер текста */
+    font-weight: bold; /* Делает текст жирным */
+    color: #4A4A4A; /* Цвет текста */
+    flex: 0 0 22%; /* Фиксирует ширину элемента на 22% */
+    white-space: nowrap; /* Предотвращает перенос текста на новую строку */
+    overflow: hidden; /* Убирает возможный переполнение текста */
+    text-overflow: ellipsis; /* Указывает, как обрезать текст */
+    
+}
+
 main {
     margin-top: 3rem;
-    padding: 2rem;
+    padding: 1rem; /* Уменьшите внутренние отступы */
 }
 
 section {
-    padding: 2rem 0;
+    padding: 1rem 0; /* Уменьшите внутренние отступы */
 }
 
-/* Стили для видео и галереи */
 .video-slider {
     display: flex;
     overflow-x: auto;
@@ -164,15 +130,16 @@ section {
 
 .video-item {
     flex: 0 0 auto;
-    min-width: 450px; /* Увеличена минимальная ширина */
+    min-width: 450px;
     text-align: center;
 }
 
-video {
-    width: 100%;
-    height: 450px; /* Увеличена высота видео */
-    object-fit: cover;
+.video-item video {
+    width: 100%; /* Keeps video responsive */
+    height: 700px; /* Sets a fixed height */
+    object-fit: cover; /* Ensures the video covers the container without distortion */
 }
+
 
 .video-description {
     margin-top: 0.5rem;
@@ -180,7 +147,6 @@ video {
     color: #333;
 }
 
-/* Стили для фото в галерее */
 .carousel {
     display: flex;
     overflow-x: auto;
@@ -191,14 +157,14 @@ video {
 
 .carousel-slide {
     flex: 0 0 auto;
-    width: 250px; /* Увеличена ширина слайда */
+    width: 250px;
     text-align: center;
 }
 
 .carousel-slide img {
     width: 100%;
-    height: 200px; /* Увеличена высота изображения */
-    object-fit: cover;
+    height: 250px; /* Sets a fixed height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
 }
 
 .image-description {
@@ -207,48 +173,117 @@ video {
     color: #333;
 }
 
-/* Адаптивность для разных экранов */
-@media screen and (max-width: 768px) {
-    .video-item {
-        min-width: 200px; /* Уменьшена минимальная ширина для меньших экранов */
-    }
-
-    video {
-        height: 150px; /* Уменьшенная высота для меньших экранов */
-    }
-
-    .carousel-slide {
-        width: 200px; /* Уменьшена ширина для меньших экранов */
-    }
-
-    .carousel-slide img {
-        height: 150px; /* Уменьшенная высота для меньших экранов */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .video-item {
-        min-width: 150px; /* Еще меньше ширина для маленьких экранов */
-    }
-
-    video {
-        height: 120px; /* Еще меньшая высота для маленьких экранов */
-    }
-
-    .carousel-slide {
-        width: 150px; /* Еще меньше ширина для маленьких экранов */
-    }
-
-    .carousel-slide img {
-        height: 100px; /* Еще меньшая высота для маленьких экранов */
-    }
-}
-
 /* Контакты */
 section#contact {
     background-color: #e0e0e0;
     padding: 2rem;
 }
+/* Основной контейнер для формы связи */
+.contact-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Контейнер для текста и кнопки */
+.contact-form {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; /* Цвет фона формы (замените на ваш основной цвет) */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Стиль текста "Свяжитесь с нами" */
+.contact-text {
+    margin-right: 10px; /* Расстояние между текстом и кнопкой */
+    color: #000; /* Цвет текста (замените на ваш основной цвет) */
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* Стиль кнопки "Свяжитесь с нами" */
+.contact-button {
+    background-color:#a8957b; /* Цвет фона кнопки (замените на ваш основной цвет) */
+    color: white; /* Цвет текста */
+    border-radius: 50%;
+    padding: 15px; /* Увеличивает размер кнопки */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+/* Эмблема сообщения */
+.message-icon {
+    width: 30px; /* Размер эмблемы сообщения */
+    height: 30px;
+}
+
+/* Стиль для скрытых иконок */
+.contact-icons {
+    position: absolute;
+    bottom: 70px; /* Расстояние от нижней части экрана до иконок */
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Расстояние между иконками */
+    z-index: 999; /* Обеспечивает, чтобы иконки были поверх других элементов */
+}
+
+.contact-icon {
+    background-color: #ffffff; /* Цвет фона иконок */
+    border: 2px solid #a8957b; /* Цвет границы иконок (замените на основной цвет) */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon img {
+    width: 24px; /* Размер иконок */
+    height: 24px;
+}
+
+/* Стиль для кнопки с крестиком */
+.contact-button.close {
+    background-color: #ffffff;
+    color: #a8957b;
+    border: 2px solid #a8957b;
+    position: relative;
+}
+
+.contact-button.close::before {
+    
+    font-size: 1.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a8957b;
+}
+
+/* Показывает иконки при нажатии на кнопку */
+.contact-icons.show {
+    display: flex;
+}
+
+/* Скрывает иконки по умолчанию */
+.hidden {
+    display: none;
+}
+
 
 footer {
     background-color: #7c6b57;
@@ -257,45 +292,33 @@ footer {
     padding: 1rem;
 }
 
-/* Адаптивность */
-@media screen and (max-width: 768px) {
-    .header-top {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .hero {
-        height: 40vh;
-    }
-
-    .large-text {
-        font-size: 3rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .carousel-slide img, .video-item video {
-        width: 100%;
+@media (min-width: 769px) {
+    .features-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 колонки на больших экранах */
     }
 }
 
-@media screen and (max-width: 480px) {
-    .header-top h1 {
-        font-size: 1.5rem;
+@media (max-width: 768px) {
+    .features-container {
+        justify-content: flex-start; /* Выравнивает элементы влево */
     }
 
-    .language-switch button {
-        font-size: 0.8rem;
+    .feature-item {
+        flex: 0 0 calc(50% - 20px); /* Фиксирует ширину элемента на 50% от ширины контейнера */
+        font-size: 1.2em; /* Уменьшает размер текста для маленьких экранов */
+        margin-left: 0; /* Убирает дополнительный отступ от левого края */
+        text-align: left; /* Выравнивание текста по левому краю */
+    }
+    .video-item {
+        min-width: 100%; /* Заставляет видео занимать всю ширину экрана */
     }
 
-    .hero {
-        height: 35vh;
+    .carousel-slide {
+        width: 100%; /* Заставляет изображения занимать всю ширину экрана */
     }
-
-    .large-text {
-        font-size: 2rem;
+}
+@media (max-width: 480px) {
+    .feature-item {
+        font-size: 1em; /* Ещё больше уменьшает размер текста для очень маленьких экранов */
     }
 }
