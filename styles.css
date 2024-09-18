@@ -136,7 +136,7 @@ section {
 
 .video-item video {
     width: 100%; /* Keeps video responsive */
-    height: 700px; /* Sets a fixed height */
+    height: 800px; /* Sets a fixed height */
     object-fit: cover; /* Ensures the video covers the container without distortion */
 }
 
