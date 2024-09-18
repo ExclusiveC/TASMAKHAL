@@ -15,7 +15,8 @@ const texts = {
         feature2: "•Обрабатываем",
         feature3: "•Монтируем",
         feature4: "•Доставляем",
-        flag: 'ru'
+        flag: 'ru',
+        contactTextBlock: "Свяжитесь с нами"
     },
     kz: {
         aboutTitle: "Компания туралы",
@@ -33,7 +34,8 @@ const texts = {
         feature2: "•Өңдейміз",
         feature3: "•Орнатамыз",
         feature4: "•Жеткіземіз",
-        flag: 'kz'
+        flag: 'kz',
+        contactTextBlock: "Бізбен хабарласыңыз"
     },
     en: {
         aboutTitle: "About Us",
@@ -51,7 +53,8 @@ We strive to provide our clients not only with high-quality stone but also with 
         feature2: "•Process",
         feature3: "•Install",
         feature4: "•Deliver",
-        flag: 'en'
+        flag: 'en',
+        contactTextBlock: "Contact us"
     },
     ar: {
         aboutTitle: "عن الشركة",
@@ -69,7 +72,8 @@ We strive to provide our clients not only with high-quality stone but also with 
         feature2: "•نقوم بالمعالجة",
         feature3: "•نقوم بالتركيب",
         feature4: "•نقوم بالتوصيل",
-        flag: 'ar'
+        flag: 'ar',
+        contactTextBlock: "اتصل بنا"
     }
 };
 
@@ -87,6 +91,7 @@ function changeLanguage(lang) {
         document.querySelector('.feature-item.hh2').textContent = texts[lang].feature2 || '';
         document.querySelector('.feature-item.hh3').textContent = texts[lang].feature3 || '';
         document.querySelector('.feature-item.hh4').textContent = texts[lang].feature4 || '';
+        document.querySelector('#contact-text').textContent = texts[lang].contactTextBlock || ''; 
 
         const dropdownBtn = document.getElementById('current-lang');
         dropdownBtn.innerHTML = `<img src="flags/${texts[lang].flag}.jpg" alt="${lang} Flag" class="flag-icon"> ${lang.toUpperCase()}`;
