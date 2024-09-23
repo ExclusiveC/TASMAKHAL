@@ -132,6 +132,9 @@ section {
     flex: 0 0 auto;
     min-width: 450px;
     text-align: center;
+    max-width: 800px; /* Ограничение ширины видео на десктопах */
+    margin: 0 auto; /* Центрирование видео */
+    
 }
 
 .video-item video {
@@ -140,6 +143,17 @@ section {
     object-fit: contain; 
     max-height: 80vh; 
     aspect-ratio: 9 / 16;
+}
+@media (max-width: 768px) {
+    .video-item {
+        width: 100%;
+    }
+
+    .video-item video {
+        width: 100%;
+        height: auto; 
+        max-height: 50vh;
+    }
 }
 
 
